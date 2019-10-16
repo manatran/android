@@ -1,5 +1,5 @@
 # Android dev with Java
-Trying out Android for the first time - Java
+Trying out Android development for the first time
 
 **Completed tutorials**:
 
