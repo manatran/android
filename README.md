@@ -1,4 +1,4 @@
-# Android dev with Java
+# Android development with Java
 Trying out Android development for the first time
 
 **Completed tutorials**:
