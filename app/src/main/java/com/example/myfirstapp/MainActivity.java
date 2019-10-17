@@ -19,31 +19,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void increment(View view) {
-        // Get the text view
         TextView showCountTextView = findViewById(R.id.textView);
-        // Get the value of the text view.
         String countString = showCountTextView.getText().toString();
-        // Convert value to a number and increment it
-        Integer count = Integer.parseInt(countString);
+        int count = Integer.parseInt(countString);
+
         count++;
-        // Display the new value in the text view.
+
         showCountTextView.setText(String.format(Locale.getDefault(), "%d", count));
     }
 
     public void decrement(View view) {
-        // Get the text view
         TextView showCountTextView = findViewById(R.id.textView);
-        // Get the value of the text view.
         String countString = showCountTextView.getText().toString();
-        // Convert value to a number and decrement it
-        Integer count = Integer.parseInt(countString);
+        int count = Integer.parseInt(countString);
+
         if (count > 0) {
             count--;
         } else {
             Toast myToast = Toast.makeText(this, "Number cannot be smaller than 0", Toast.LENGTH_SHORT);
             myToast.show();
         }
-        // Display the new value in the text view.
+
         showCountTextView.setText(String.format(Locale.getDefault(), "%d", count));
     }
 
@@ -52,12 +48,11 @@ public class MainActivity extends AppCompatActivity {
     public void randomNumber(View view) {
         // Create an Intent to start the second activity
         Intent randomIntent = new Intent(this, SecondActivity.class);
-        // Get the text view that shows the count.
+
         TextView showCountTextView = findViewById(R.id.textView);
-        // Get the value of the text view.
         String countString = showCountTextView.getText().toString();
-        // Convert the count to an int
         int count = Integer.parseInt(countString);
+
         // Add the count to the extras for the Intent.
         randomIntent.putExtra(TOTAL_COUNT, count);
         // Start the new activity.

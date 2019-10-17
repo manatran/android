@@ -20,22 +20,22 @@ public class SecondActivity extends AppCompatActivity {
     private static final String TOTAL_COUNT = "total_count";
 
     private void showRandomNumber() {
-        // Get the text view where the random number will be displayed
         TextView randomView = findViewById(R.id.textview_random);
-        // Get the text view where the heading is displayed
         TextView headingView = findViewById(R.id.textview_label);
+
         // Get the count from the intent extras
         int count = getIntent().getIntExtra(TOTAL_COUNT, 0);
+
         // Generate the random number
         Random random = new Random();
         int randomInt = 0;
         if (count > 0) {
             randomInt = random.nextInt(count);
         }
+
         // Display the random number
         randomView.setText(String.format(Locale.getDefault(), "%d", randomInt));
-        // Substitute the max value into the string resource
-        // for the heading, and update the heading
+        // Update the heading text
         headingView.setText(getString(R.string.random_heading, count));
     }
 }
