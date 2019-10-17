@@ -18,16 +18,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void toastMe(View view) {
-        // Toast myToast = Toast.makeText(this, message, duration);
+    public void showToast(View view) {
         Toast myToast = Toast.makeText(this, "Hello Toast!", Toast.LENGTH_SHORT);
         myToast.show();
     }
 
-    public void countMe(View view) {
+    public void countUp(View view) {
         // Get the text view
-        TextView showCountTextView = (TextView)
-                findViewById(R.id.textView);
+        TextView showCountTextView = findViewById(R.id.textView);
         // Get the value of the text view.
         String countString = showCountTextView.getText().toString();
         // Convert value to a number and increment it
@@ -39,12 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TOTAL_COUNT = "total_count";
 
-    public void randomMe(View view) {
+    public void randomNumber(View view) {
         // Create an Intent to start the second activity
         Intent randomIntent = new Intent(this, SecondActivity.class);
         // Get the text view that shows the count.
-        TextView showCountTextView = (TextView)
-                findViewById(R.id.textView);
+        TextView showCountTextView = findViewById(R.id.textView);
         // Get the value of the text view.
         String countString = showCountTextView.getText().toString();
         // Convert the count to an int
