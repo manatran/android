@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
@@ -57,5 +60,16 @@ public class MainActivity extends AppCompatActivity {
         randomIntent.putExtra(TOTAL_COUNT, count);
         // Start the new activity.
         startActivity(randomIntent);
+    }
+
+    public void applyNumber(View view) {
+        TextView showCountTextView = findViewById(R.id.textView);
+
+        EditText editText = findViewById(R.id.numberInput);
+        int newCount = Integer.parseInt(editText.getText().toString());
+
+        showCountTextView.setText(String.format(Locale.getDefault(), "%d", newCount));
+        // Clear input
+        editText.getText().clear();
     }
 }
